@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata6:/data/db
+
+  ingestiondonnee:
+    build: ./projet_ingestion
+    depends_on:
+      - mongodb
+
+  secondscript:
+    build: ./projet_traitement
+    depends_on:
+      - mongodb
+
+volumes:
+  dbdata6
