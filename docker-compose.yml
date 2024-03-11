@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   mongodb:
     image: mongo:6-jammy
@@ -9,13 +10,15 @@ services:
 
   ingestiondonnee:
     build: ./projet_ingestion
+    command: python interfaceingestion.py
     depends_on:
       - mongodb
 
   secondscript:
     build: ./projet_traitement
+    command: python insertdata.py
     depends_on:
-      - mongodb
+      - ingestiondonnee
 
 volumes:
-  dbdata6
+  dbdata6:
