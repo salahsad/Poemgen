@@ -1,5 +1,4 @@
-version: '3.8'
-
+version: '3'
 services:
   mongodb:
     image: mongo:6-jammy
@@ -15,7 +14,7 @@ services:
       - mongodb
 
   secondscript:
-    build: ./projet_traitement
+    build: ./projet_machinelearning
     command: python insertdata.py
     depends_on:
       - ingestiondonnee
