@@ -1,3 +1,3 @@
-cd /home/ec2-user/project
+cd /home/ec2-user/
 
 docker-compose up -d

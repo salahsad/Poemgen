@@ -2,15 +2,8 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/project
-permissions:
-  - object: /home/ec2-user/project
-    pattern: "**"
-    owner: root
-    group: root
-    mode: 755
+    destination: /home/ec2-user
 hooks:
   ApplicationStart:
-    - location: /
+    - location: /start.sh
       timeout: 300
-      runas: root
