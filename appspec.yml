@@ -11,6 +11,6 @@ permissions:
     mode: 755
 hooks:
   ApplicationStart:
-    - location: /home/ec2-user/project/start.sh
+    - location: /start.sh
       timeout: 500
       runas: root
