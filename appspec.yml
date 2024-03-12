@@ -11,6 +11,6 @@ permissions:
     mode: 755
 hooks:
   ApplicationStart:
-    - location: ./start.sh
+    - location: /start.sh
       timeout: 500
       runas: root
